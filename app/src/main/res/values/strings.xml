@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">VehicleSearch</string>
+    <string name="new_feature">New Feature</string>
+    <string name="onboarding_header_text">MAKING CARS EASY<font fgcolor='#70ed5b'>.</font></string>
+    <string name="go">GO</string>
+    <string name="try_it_out">Try it out</string>
+    <string name="try_new_feature_hint">We\'ve got a brilliant new vehicle search feature..why not give it a try!</string>
+    <string name="search_tool_header">WHAT\'S YOUR\nVEHICLE REG<font fgcolor='#70ed5b'>?</font></string>
+    <string name="search_error_msg">Uh-oh! We couldn\'t find a vehicle with that registration.\n\nTry searching \'XXYYZZZ\'…</string>
+    <string name="empty_content_desc">locale flag</string>
+    <string name="gb">GB</string>
+    <string name="enter_reg">ENTER REG</string>
+    <string name="search_tool">Search Tool</string>
+    <string name="reg_no_required">Registration no is required</string>
+</resources>
