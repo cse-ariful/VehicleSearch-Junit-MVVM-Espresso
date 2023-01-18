@@ -7,8 +7,10 @@ import com.nightcoder.greenleaf.databinding.ActivityOnboardingBinding
 import com.nightcoder.greenleaf.ui.features.searchtool.SearchToolActivity
 
 class OnBoardingActivity : AppCompatActivity() {
+
     private var _binding: ActivityOnboardingBinding? = null
     private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ActivityOnboardingBinding.inflate(layoutInflater).also {

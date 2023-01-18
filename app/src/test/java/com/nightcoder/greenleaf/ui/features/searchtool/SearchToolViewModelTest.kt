@@ -5,7 +5,6 @@ import com.nightcoder.greenleaf.data.state.ApiResult
 import com.nightcoder.greenleaf.domain.model.VehicleInfoModel
 import com.nightcoder.greenleaf.domain.state.UiState
 import com.nightcoder.greenleaf.domain.usecases.SearchVehicleInfoUseCase
-import com.nightcoder.greenleaf.MainCoroutineRule
 import io.mockk.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -79,7 +78,7 @@ class SearchToolViewModelTest {
     }
 
     @Test
-    fun `When error fetching details error state is show`() = scope.runTest{
+    fun `When error fetching details error state is shown`() = scope.runTest{
 
         coEvery {
             searchVehicleUseCase.query(any())
@@ -108,7 +107,9 @@ class SearchToolViewModelTest {
         advanceUntilIdle()
 
         assert(states[0] is UiState.Idle)
+
         assert(states[1] is UiState.Loading)
+
         assert(states[2] is UiState.Content || states[2] is UiState.Error)
 
     }

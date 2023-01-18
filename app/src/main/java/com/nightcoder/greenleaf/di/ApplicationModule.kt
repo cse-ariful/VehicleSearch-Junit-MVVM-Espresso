@@ -7,26 +7,15 @@ import com.nightcoder.greenleaf.domain.usecases.SearchVehicleInfoUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dagger.hilt.android.components.ActivityRetainedComponent
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import java.security.SecureRandom
 import javax.inject.Qualifier
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ActivityRetainedComponent::class)
 object ApplicationModule {
-
-    @Provides
-    fun provideRetrofit(): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl("https://da4705d6-9b2b-4f2a-8f19-6db21183fd13.mock.pstmn.io/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-    }
 
     @Provides
     fun providerVehicleSearchApi(retrofit: Retrofit): VehicleSearchApi {

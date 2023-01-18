@@ -22,6 +22,7 @@ class SearchToolActivity : AppCompatActivity() {
     private val binding get() = _binding!!
 
     private val viewModel: SearchToolViewModel by viewModels()
+
     private var adapter = VehicleFeatureGridAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +38,7 @@ class SearchToolActivity : AppCompatActivity() {
     }
 
     private fun initObserver() {
+
         viewModel.state.observe(this) { state ->
             binding.resultView.isVisible = state is UiState.Content
             binding.progressbar.isVisible = state is UiState.Loading
@@ -46,15 +48,16 @@ class SearchToolActivity : AppCompatActivity() {
                 adapter.setItems(state.data)
             }
         }
+
     }
 
     private fun initView() {
+
         binding.recyclerView.adapter = adapter
 
         binding.backBtn.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
-
         binding.searchBtn.setOnClickListener {
             val queryText = binding.searchField.text
             if (queryText.isNullOrEmpty()) {
@@ -64,6 +67,7 @@ class SearchToolActivity : AppCompatActivity() {
             hideKeyBoard()
             viewModel.queryDetails(queryText.toString())
         }
+
     }
 
     private fun hideKeyBoard() {
