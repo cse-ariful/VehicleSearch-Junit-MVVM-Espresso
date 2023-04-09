@@ -1,4 +1,4 @@
-package com.nightcoder.vehiclesearch.adapter
+package com.nightcoder.vehiclesearch.ui.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

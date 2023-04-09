@@ -9,7 +9,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.nightcoder.vehiclesearch.R
-import com.nightcoder.vehiclesearch.adapter.VehicleFeatureGridAdapter
+import com.nightcoder.vehiclesearch.ui.adapter.VehicleFeatureGridAdapter
 import com.nightcoder.vehiclesearch.databinding.ActivitySearchToolBinding
 import com.nightcoder.vehiclesearch.domain.state.UiState
 import dagger.hilt.android.AndroidEntryPoint

@@ -13,16 +13,21 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module
 @InstallIn(SingletonComponent::class)
 class NetworkingModule {
-    private val okHttp = OkHttpClient.Builder()
-        .addInterceptor(RequestInterceptor())
-        .build()
+
 
     @Provides
-    fun provideRetrofit(): Retrofit {
+    fun provideOkHttpClient():OkHttpClient{
+        return OkHttpClient.Builder()
+            .addInterceptor(RequestInterceptor())
+            .build()
+    }
+
+    @Provides
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl("http://192.168.0.101:3000/")
             .addConverterFactory(GsonConverterFactory.create())
-            .client(okHttp)
+            .client(okHttpClient)
             .build()
 
     }
