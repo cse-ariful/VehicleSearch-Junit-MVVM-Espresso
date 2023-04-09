@@ -1,10 +1,12 @@
 package com.nightcoder.greenleaf.ui.features.searchtool
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.nightcoder.greenleaf.data.state.ApiResult
-import com.nightcoder.greenleaf.domain.model.VehicleInfoModel
-import com.nightcoder.greenleaf.domain.state.UiState
-import com.nightcoder.greenleaf.domain.usecases.SearchVehicleInfoUseCase
+import com.nightcoder.vehiclesearch.data.state.ApiResult
+import com.nightcoder.vehiclesearch.domain.model.VehicleInfoModel
+import com.nightcoder.vehiclesearch.domain.state.UiState
+import com.nightcoder.vehiclesearch.domain.usecases.SearchVehicleInfoUseCase
+import com.nightcoder.vehiclesearch.logger.Logger
+import com.nightcoder.vehiclesearch.ui.features.searchtool.SearchToolViewModel
 import io.mockk.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -28,21 +30,25 @@ class SearchToolViewModelTest {
 
     private lateinit var viewModel: SearchToolViewModel
 
-    private val defaultDataModel = VehicleInfoModel(
-        "Make",
-        "Model",
-        "Details",
-        "Engine",
-        "gearbox",
-        "BodyType",
-        "2017",
-        "20231212"
-    )
+    private val logger = mockk<Logger>{
+        every {
+            error(any(),any())
+        } returns Unit
+        every {
+            info(any())
+        } returns Unit
+    }
+
+    private val defaultDataModel =  mockk<VehicleInfoModel>(relaxed = true){
+        every {
+            motExpiry
+        }returns "20231011"
+    }
 
     @Before
     fun setup() {
         Dispatchers.setMain(StandardTestDispatcher())
-        viewModel = SearchToolViewModel(searchVehicleUseCase,dispatcher)
+        viewModel = SearchToolViewModel(searchVehicleUseCase,logger,dispatcher)
     }
 
 

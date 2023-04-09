@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace 'com.nightcoder.greenleaf'
+    namespace 'com.nightcoder.vehiclesearch'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.nightcoder.greenleaf"
+        applicationId "com.nightcoder.vehiclesearch"
         minSdk 21
         targetSdk 32
         versionCode 1
