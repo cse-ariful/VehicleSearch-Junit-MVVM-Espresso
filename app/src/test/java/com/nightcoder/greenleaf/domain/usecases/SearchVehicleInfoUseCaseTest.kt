@@ -6,9 +6,12 @@ import com.nightcoder.vehiclesearch.data.vehicleSearch.SearchVehicleServiceImpl
 import com.nightcoder.vehiclesearch.domain.usecases.SearchVehicleInfoUseCase
 import io.mockk.coEvery
 import io.mockk.mockk
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.test.runTest
 import org.junit.Test
 
+@OptIn(ExperimentalCoroutinesApi::class)
 class SearchVehicleInfoUseCaseTest {
     private val service: SearchVehicleServiceImpl = mockk()
     val sut = SearchVehicleInfoUseCase(service)
@@ -25,14 +28,14 @@ class SearchVehicleInfoUseCaseTest {
     )
 
     @Test
-    fun `Test UseCase Is Handling Exception`() = runBlockingTest {
+    fun `Test UseCase Is Handling Exception`() = runTest {
         coEvery { service.queryVehicleInfo(any()) } throws Exception("No Internet Connection")
         val result = sut.query("")
         assert(result is ApiResult.Failed)
     }
 
     @Test
-    fun `Test UseCase is Delivering Success Result`() = runBlockingTest {
+    fun `Test UseCase is Delivering Success Result`() = runTest {
         coEvery {
             service.queryVehicleInfo(any())
         } returns ApiResult.Success(testDataModel)
@@ -44,7 +47,7 @@ class SearchVehicleInfoUseCaseTest {
     }
 
     @Test
-    fun `Test UseCase is Delivering Error Result`() = runBlockingTest {
+    fun `Test UseCase is Delivering Error Result`() = runTest {
         coEvery {
             service.queryVehicleInfo(any())
         } returns ApiResult.Failed("Something went wrong")

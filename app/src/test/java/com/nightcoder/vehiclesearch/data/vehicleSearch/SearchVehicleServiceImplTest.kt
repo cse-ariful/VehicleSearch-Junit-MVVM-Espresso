@@ -5,6 +5,7 @@ import com.nightcoder.vehiclesearch.data.model.VehicleInfoDataModel
 import com.nightcoder.vehiclesearch.data.state.ApiResult
 import io.mockk.coEvery
 import io.mockk.mockk
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import okhttp3.ResponseBody
 import org.junit.Assert.*
@@ -13,7 +14,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import retrofit2.Response
-
+@OptIn(ExperimentalCoroutinesApi::class)
 @RunWith(JUnit4::class)
 class SearchVehicleServiceImplTest {
     private lateinit var sut: SearchVehicleServiceImpl
@@ -36,6 +37,7 @@ class SearchVehicleServiceImplTest {
         val data = (result as ApiResult.Success).data
         assert(data == expectedResult)
     }
+
 
     @Test
     fun `Test if server call fail it returns the Fail result without throwing exception`() = runTest{
