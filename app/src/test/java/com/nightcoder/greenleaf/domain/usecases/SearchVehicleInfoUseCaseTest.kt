@@ -1,9 +1,9 @@
 package com.nightcoder.greenleaf.domain.usecases
 
-import com.nightcoder.vehiclesearch.data.model.VehicleInfoDataModel
-import com.nightcoder.vehiclesearch.data.state.ApiResult
-import com.nightcoder.vehiclesearch.data.vehicleSearch.SearchVehicleServiceImpl
-import com.nightcoder.vehiclesearch.domain.usecases.SearchVehicleInfoUseCase
+import com.vehicleapp.data.model.VehicleInfoDataModel
+import com.vehicleapp.domain.state.ApiResult
+import com.vehicleapp.data.vehicleSearch.SearchVehicleServiceImpl
+import com.vehicleapp.domain.usecases.SearchVehicleInfoUseCase
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi

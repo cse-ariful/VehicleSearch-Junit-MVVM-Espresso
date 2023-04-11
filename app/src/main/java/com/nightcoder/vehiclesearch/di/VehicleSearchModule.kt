@@ -1,9 +1,9 @@
 package com.nightcoder.vehiclesearch.di
 
-import com.nightcoder.vehiclesearch.data.api.VehicleSearchApi
-import com.nightcoder.vehiclesearch.data.vehicleSearch.SearchVehicleServiceImpl
-import com.nightcoder.vehiclesearch.domain.service.SearchVehicleService
-import com.nightcoder.vehiclesearch.domain.usecases.SearchVehicleInfoUseCase
+import com.vehicleapp.data.api.VehicleSearchApi
+import com.vehicleapp.data.vehicleSearch.SearchVehicleServiceImpl
+import com.vehicleapp.domain.service.SearchVehicleService
+import com.vehicleapp.domain.usecases.SearchVehicleInfoUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

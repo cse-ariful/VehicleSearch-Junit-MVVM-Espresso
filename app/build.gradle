@@ -43,6 +43,9 @@ android {
 
 dependencies {
 
+    implementation project(path: ':data')
+    implementation project(path: ':domain')
+
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.appcompat)
     implementation(AndroidX.constraintLayout)
@@ -60,12 +63,14 @@ dependencies {
 
     implementation(AndroidX.activityKtx)
 
+    //unit testing
     testImplementation(TestImplementation.jUnit)
     testImplementation(TestImplementation.mockk)
     testImplementation(TestImplementation.coreTesting)
     testImplementation(TestImplementation.coroutineTest)
-
     androidTestImplementation(TestImplementation.jUniExt)
+
+    //espresso
     androidTestImplementation(TestImplementation.espresso)
 
 }

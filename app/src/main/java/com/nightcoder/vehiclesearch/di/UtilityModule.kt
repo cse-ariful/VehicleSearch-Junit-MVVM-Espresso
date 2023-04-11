@@ -1,8 +1,8 @@
 package com.nightcoder.vehiclesearch.di
 
-import com.nightcoder.vehiclesearch.logger.ConsoleLogger
-import com.nightcoder.vehiclesearch.logger.FileLogger
-import com.nightcoder.vehiclesearch.logger.Logger
+import com.vehicleapp.domain.logger.ConsoleLogger
+import com.vehicleapp.domain.logger.FileLogger
+import com.vehicleapp.domain.logger.Logger
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
