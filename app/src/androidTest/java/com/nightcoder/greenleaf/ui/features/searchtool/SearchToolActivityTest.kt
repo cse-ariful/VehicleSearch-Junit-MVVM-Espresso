@@ -56,7 +56,7 @@ class SearchToolActivityTest {
 
         val progressbar = onView(withId(R.id.progressbar))
 
-        progressbar.waitForViewToVisible(2000)
+        progressbar.waitForViewToVisible(5000)
 
         progressbar.check(matches(isDisplayed()))
 

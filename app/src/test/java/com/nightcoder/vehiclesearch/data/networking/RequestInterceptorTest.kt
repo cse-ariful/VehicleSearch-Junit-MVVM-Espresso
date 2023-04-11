@@ -1,5 +1,6 @@
 package com.nightcoder.vehiclesearch.data.networking
 
+import com.vehicleapp.data.networking.RequestInterceptor
 import okhttp3.Request
 import okhttp3.internal.http.HttpHeaders
 import okhttp3.internal.http.HttpMethod

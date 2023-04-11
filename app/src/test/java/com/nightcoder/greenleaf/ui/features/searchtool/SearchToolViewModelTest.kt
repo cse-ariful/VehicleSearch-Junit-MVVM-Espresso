@@ -1,11 +1,11 @@
 package com.nightcoder.greenleaf.ui.features.searchtool
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.nightcoder.vehiclesearch.data.state.ApiResult
-import com.nightcoder.vehiclesearch.domain.model.VehicleInfoModel
-import com.nightcoder.vehiclesearch.domain.state.UiState
-import com.nightcoder.vehiclesearch.domain.usecases.SearchVehicleInfoUseCase
-import com.nightcoder.vehiclesearch.logger.Logger
+import com.vehicleapp.domain.state.ApiResult
+import com.vehicleapp.domain.model.VehicleInfoModel
+import com.vehicleapp.domain.state.UiState
+import com.vehicleapp.domain.usecases.SearchVehicleInfoUseCase
+import com.vehicleapp.domain.logger.Logger
 import com.nightcoder.vehiclesearch.ui.features.searchtool.SearchToolViewModel
 import io.mockk.*
 import kotlinx.coroutines.Dispatchers

@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.nightcoder.vehiclesearch.R
 import com.nightcoder.vehiclesearch.databinding.ItemVehicleInfoBinding
-import com.nightcoder.vehiclesearch.domain.model.VehicleFeatureItem
+import com.vehicleapp.domain.model.VehicleFeatureItem
 
 class VehicleFeatureGridAdapter : RecyclerView.Adapter<VehicleFeatureGridAdapter.ViewHolder>() {
     private val items = mutableListOf<VehicleFeatureItem>()

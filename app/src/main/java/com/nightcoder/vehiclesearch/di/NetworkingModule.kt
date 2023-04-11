@@ -1,6 +1,6 @@
 package com.nightcoder.vehiclesearch.di
 
-import com.nightcoder.vehiclesearch.data.networking.RequestInterceptor
+import com.vehicleapp.data.networking.RequestInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,10 +25,12 @@ class NetworkingModule {
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://192.168.0.101:3000/")
+            .baseUrl("http://10.0.2.2:3000/") //This is a mock server url running on local pc using mockoon (https://mockoon.com/)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
+
+
 
     }
 }

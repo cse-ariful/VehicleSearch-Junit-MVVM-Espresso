@@ -1,8 +1,9 @@
 package com.nightcoder.vehiclesearch.data.vehicleSearch
 
-import com.nightcoder.vehiclesearch.data.api.VehicleSearchApi
-import com.nightcoder.vehiclesearch.data.model.VehicleInfoDataModel
-import com.nightcoder.vehiclesearch.data.state.ApiResult
+import com.vehicleapp.data.api.VehicleSearchApi
+import com.vehicleapp.data.model.VehicleInfoDataModel
+import com.vehicleapp.domain.state.ApiResult
+import com.vehicleapp.data.vehicleSearch.SearchVehicleServiceImpl
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
