@@ -1,5 +1,6 @@
 package com.nightcoder.vehiclesearch.di
 
+import com.nightcoder.vehiclesearch.BuildConfig
 import com.vehicleapp.data.networking.RequestInterceptor
 import dagger.Module
 import dagger.Provides
@@ -18,7 +19,7 @@ class NetworkingModule {
     @Provides
     fun provideOkHttpClient():OkHttpClient{
         return OkHttpClient.Builder()
-            .addInterceptor(RequestInterceptor())
+            .addInterceptor(RequestInterceptor(apiKey = BuildConfig.SEARCH_API_KEY))
             .build()
     }
 
