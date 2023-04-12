@@ -2,6 +2,7 @@ package com.nightcoder.vehiclesearch.data.vehicleSearch
 
 import com.vehicleapp.data.api.VehicleSearchApi
 import com.vehicleapp.data.model.VehicleInfoDataModel
+import com.vehicleapp.data.model.toDomainModel
 import com.vehicleapp.domain.state.ApiResult
 import com.vehicleapp.data.vehicleSearch.SearchVehicleServiceImpl
 import io.mockk.coEvery
@@ -36,7 +37,7 @@ class SearchVehicleServiceImplTest {
         val result = sut.queryVehicleInfo("")
         assert(result is ApiResult.Success)
         val data = (result as ApiResult.Success).data
-        assert(data == expectedResult)
+        assert(data == expectedResult.toDomainModel())
     }
 
 
