@@ -3,8 +3,10 @@ package com.nightcoder.greenleaf.domain.usecases
 import com.vehicleapp.data.model.VehicleInfoDataModel
 import com.vehicleapp.domain.state.ApiResult
 import com.vehicleapp.data.vehicleSearch.SearchVehicleServiceImpl
+import com.vehicleapp.domain.model.VehicleInfoModel
 import com.vehicleapp.domain.usecases.SearchVehicleInfoUseCase
 import io.mockk.coEvery
+import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
@@ -16,16 +18,9 @@ class SearchVehicleInfoUseCaseTest {
     private val service: SearchVehicleServiceImpl = mockk()
     val sut = SearchVehicleInfoUseCase(service)
 
-    private val testDataModel = VehicleInfoDataModel(
-        "testMake",
-        "testModel",
-        "testDetails",
-        "testEngine",
-        "testGearBox",
-        "testBodyType",
-        "testYear",
-        "2231210"
-    )
+    private val testDataModel: VehicleInfoModel = mockk(relaxed = true) {
+        every { motExpiry } returns "2231210"
+    }
 
     @Test
     fun `Test UseCase Is Handling Exception`() = runTest {
